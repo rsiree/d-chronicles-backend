@@ -11,16 +11,16 @@ const newsController = require('./controllers/news.controller')
 app.use("/news", newsController);
 
 
+const port= process.env.PORT || 23456
 
 
 
-
-app.listen(23456, async () => {
+app.listen(port, async () => {
     try {
       await connect();
       console.log('connected')
     } catch (err) {
       console.error(err.message);
     }
-    console.log("listening on port 23456");
+    console.log(`listening on port ${port}`);
 })
